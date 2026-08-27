@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Space Grotesk', ui-sans-serif, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-signal: #3556FF;
+  --color-signal-dim: #1E36B8;
+  --color-amber: #FF8A3D;
+  --color-amber-dim: #E06F22;
+}
+
+:root {
+  --bg: #0A0D14;
+  --bg-raised: #10141F;
+  --bg-inset: #060810;
+  --fg: #EEF1F7;
+  --fg-muted: #8C93A6;
+  --border: #232838;
+  --grid-line: rgba(238, 241, 247, 0.05);
+  color-scheme: dark;
+}
+
+:root.light {
+  --bg: #F2F4F8;
+  --bg-raised: #FFFFFF;
+  --bg-inset: #E7EAF1;
+  --fg: #10131C;
+  --fg-muted: #5B6274;
+  --border: #DBDFE9;
+  --grid-line: rgba(16, 19, 28, 0.06);
+  color-scheme: light;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background-color: var(--color-signal);
+  color: white;
+}
+
+/* Blueprint dot-grid — the recurring structural motif */
+.grid-paper {
+  background-image:
+    radial-gradient(var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.ruler-ticks {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--border) 0,
+    var(--border) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+}
+
+/* Visible keyboard focus, always */
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-mono {
+  font-variant-ligatures: none;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 6px; }
