@@ -1,5 +1,9 @@
 # Nadeem — Front-End Developer Portfolio
 
+> **Live demo:** https://nadeeem1.github.io/nadeem-portfolio/
+>
+> **Repository:** https://github.com/nadeeem1/nadeem-portfolio
+
 A production-ready personal portfolio built with React, TypeScript, Tailwind CSS v4, React Router and Framer Motion.
 
 ## Design direction
